@@ -13,16 +13,16 @@ namespace HttpGetRandomImageWebAPI.Controllers
     [ApiController]
     public class TodoItemsController : ControllerBase
     {
-        private readonly TodoContext _context;
+        private readonly Context _context;
 
-        public TodoItemsController(TodoContext context)
+        public TodoItemsController(Context context)
         {
             _context = context;
         }
 
         // GET: api/TodoItems
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
+        public async Task<ActionResult<IEnumerable<Item>>> GetTodoItems()
         {
           if (_context.TodoItems == null)
           {
@@ -33,7 +33,7 @@ namespace HttpGetRandomImageWebAPI.Controllers
 
         // GET: api/TodoItems/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
+        public async Task<ActionResult<Item>> GetTodoItem(long id)
         {
           if (_context.TodoItems == null)
           {
@@ -52,7 +52,7 @@ namespace HttpGetRandomImageWebAPI.Controllers
         // PUT: api/TodoItems/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
+        public async Task<IActionResult> PutTodoItem(long id, Item todoItem)
         {
             if (id != todoItem.Id)
             {
@@ -83,7 +83,7 @@ namespace HttpGetRandomImageWebAPI.Controllers
         // POST: api/TodoItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
+        public async Task<ActionResult<Item>> PostTodoItem(Item todoItem)
         {
             _context.TodoItems.Add(todoItem);
             await _context.SaveChangesAsync();

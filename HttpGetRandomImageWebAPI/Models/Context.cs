@@ -3,13 +3,13 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace HttpGetRandomImageWebAPI.Models
 {
-    public class TodoContext : DbContext
+    public class Context : DbContext
     {
-        public TodoContext(DbContextOptions<TodoContext> options)
+        public Context(DbContextOptions<Context> options)
             : base(options)
         {
         }
 
-        public DbSet<TodoItem> TodoItems { get; set; } = null!;
+        public DbSet<Item> TodoItems { get; set; } = null!;
     }
 }
