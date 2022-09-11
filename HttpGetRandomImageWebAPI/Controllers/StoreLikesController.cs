@@ -11,11 +11,11 @@ namespace HttpGetRandomImageWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TodoItemsController : ControllerBase
+    public class StoreLikesController : ControllerBase
     {
         private readonly Context _context;
 
-        public TodoItemsController(Context context)
+        public StoreLikesController(Context context)
         {
             _context = context;
         }
