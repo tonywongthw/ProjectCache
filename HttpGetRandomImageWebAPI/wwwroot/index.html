@@ -2,16 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>To-do CRUD</title>
+    <title>Image Gallery</title>
     <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-    <img src="https://localhost:7179/Image/Random?dirPath=abstract" width={550} alt='' />
-    <h1>To-do CRUD</h1>
-    <h3>Add</h3>
+    <h1>~Image Gallery~</h1>
+
+    <div>
+        <img src="https://localhost:7179/Image/Random?dirPath=abstract" width="800" alt='' />
+    </div>
+
+    <h3>Do you want to vote for the image?</h3>
     <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-name" placeholder="New to-do">
-        <input type="submit" value="Add">
+        <input type="text" id="add-name" placeholder="">
+        <br>
+        <input type="submit" value="Input ImgName to Vote">
     </form>
 
     <div id="editForm">
@@ -23,20 +28,24 @@
             <input type="submit" value="Save">
             <a onclick="closeInput()" aria-label="Close">&#10006;</a>
         </form>
-        
+
     </div>
 
-    <p id="counter"></p>
+    <h3>Record of Votes</h3>
 
     <table>
         <tr>
-            <th>Is Complete?</th>
-            <th>Name</th>
+            <th>IsLike?</th>
+            <th>ImgName</th>
             <th></th>
             <th></th>
         </tr>
         <tbody id="todos"></tbody>
     </table>
+
+    <h3>Number of Votes Made</h3>
+
+    <p id="counter"></p>
 
     <script src="js/site.js" asp-append-version="true"></script>
     <script type="text/javascript">

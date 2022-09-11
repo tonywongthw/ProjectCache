@@ -78,7 +78,7 @@ function closeInput() {
 }
 
 function _displayCount(itemCount) {
-    const name = (itemCount === 1) ? 'to-do' : 'to-dos';
+    const name = (itemCount === 1) ? 'votes made' : 'votes made';
 
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }
